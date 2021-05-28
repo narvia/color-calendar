@@ -1,7 +1,7 @@
 {
-  "name": "color-calendar",
+  "name": "@jenbeattie/color-calendar",
   "version": "1.0.5",
-  "description": "A customizable events calendar widget library",
+  "description": "A customizable events calendar widget library by PawanKolhe",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "browser": "dist/bundle.js",
@@ -58,12 +58,12 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/PawanKolhe/color-calendar.git"
+    "url": "https://github.com/jenbeattie/color-calendar.git"
   },
   "bugs": {
-    "url": "https://github.com/PawanKolhe/color-calendar/issues"
+    "url": "https://github.com/jenbeattie/color-calendar/issues"
   },
-  "homepage": "https://github.com/PawanKolhe/color-calendar",
+  "homepage": "https://github.com/jenbeattie/color-calendar",
   "files": [
     "/dist"
   ],
