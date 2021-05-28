@@ -1,4 +1,4 @@
-import Calendar from '../../index';
+import {Calendar} from '../../index';
 
 import { MONTH_NAMES_SHORT, resetDOM } from '../../testHelper';
 

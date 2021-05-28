@@ -7,10 +7,12 @@ import { terser } from "rollup-plugin-terser";
 import banner from 'rollup-plugin-banner';
 import typescript from '@rollup/plugin-typescript';
 import strip from '@rollup/plugin-strip';
+import postcss from 'rollup-plugin-postcss';
 
 const config = [
   {
-    input: "src/index.ts",
+    input: "src/index.jsx",
+    external: ['src/css/theme-baasic.css'],
     output: [
       {
         file: "dist/bundle.cjs.js",
@@ -27,6 +29,9 @@ const config = [
       },
     ],
     plugins: [
+      postcss({
+        extensions: [ '.css' ],
+      }),
       typescript(),
       strip(),  // removes console.log
       commonjs({

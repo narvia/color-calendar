@@ -20,10 +20,10 @@ import {
   StartWeekday,
 } from "./types.d";
 
-export default class Calendar {
+export class Calendar {
   /* Constants */
-  readonly CAL_NAME = 'color-calendar';
-  readonly DAYS_TO_DISPLAY = 42;
+  CAL_NAME = 'color-calendar';
+  DAYS_TO_DISPLAY = 42;
 
   /* Options */
   id: string;

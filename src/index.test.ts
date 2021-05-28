@@ -1,4 +1,4 @@
-import Calendar from './index';
+import {Calendar} from './index';
 import { DEFAULT_ID, MONTH_NAMES_SHORT, MONTH_NAMES_LONG, resetDOM } from './testHelper';
 
 jest.autoMockOff();

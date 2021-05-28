@@ -1,4 +1,4 @@
-import Calendar from '../../../index';
+import {Calendar} from '../../../index';
 import { resetDOM } from '../../../testHelper';
 
 beforeEach(() => {
