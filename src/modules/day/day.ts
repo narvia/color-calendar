@@ -241,7 +241,10 @@ export function renderDays() {
   let isTodayMonth = (this.today.getMonth() === this.currentDate.getMonth()) && isTodayYear;
   this.daysIn_CurrentMonth.forEach((day: Day) => {
     let isTodayDate = isTodayMonth && day.day === this.today.getDate();
-    const isFutureDate = day.day > this.today.getDate();
+    const isFutureMonth = this.currentDate.getMonth() >= this.today.getMonth();
+    const isFutureDay = (day.day > this.today.getDate()) || isFutureMonth;
+    const isFutureDate = isFutureMonth && isFutureDay;
+
     newHTML += `
       <div class="calendar__day calendar__day-active${isTodayDate ? ' calendar__day-today' : ''}${isFutureDate ? ' calendar__day-future' : ''}${
       this.eventDayMap[day.day]
