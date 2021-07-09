@@ -301,14 +301,14 @@ export function rerenderSelectedDay(element: HTMLElement, dayNum: number, storeO
   `;
 
   // Insert newly created target day to DOM
-  if(!previousElement) {
+  if (!previousElement && this.calendarDays.parentElement?.contains(element)) {
     // Handle edge case when it is the first element in the calendar
     this.calendarDays.insertBefore(
       div,
       element
     );
   } else {
-    if(previousElement.parentElement) {
+    if (previousElement && previousElement.parentElement && previousElement.parentElement.contains(previousElement.nextSibling)) {
       previousElement.parentElement.insertBefore(
         div,
         previousElement.nextSibling
