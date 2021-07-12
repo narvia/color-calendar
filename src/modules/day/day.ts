@@ -241,9 +241,9 @@ export function renderDays() {
   let isTodayMonth = (this.today.getMonth() === this.currentDate.getMonth()) && isTodayYear;
   this.daysIn_CurrentMonth.forEach((day: Day) => {
     let isTodayDate = isTodayMonth && day.day === this.today.getDate();
-    const isFutureMonth = this.currentDate.getMonth() >= this.today.getMonth();
-    const isFutureDay = (day.day > this.today.getDate()) || isFutureMonth;
-    const isFutureDate = isFutureMonth && isFutureDay;
+    const isFutureMonth = this.currentDate.getMonth() > this.today.getMonth();
+    const isFutureDayInCurrentMonth = this.currentDate.getMonth() === this.today.getMonth() && day.day > this.today.getDate();
+    const isFutureDate = isFutureDayInCurrentMonth || isFutureMonth;
 
     newHTML += `
       <div class="calendar__day calendar__day-active${isTodayDate ? ' calendar__day-today' : ''}${isFutureDate ? ' calendar__day-future' : ''}${
@@ -282,10 +282,14 @@ export function rerenderSelectedDay(element: HTMLElement, dayNum: number, storeO
   let isTodayYear = this.today.getFullYear() === this.currentDate.getFullYear();
   let isTodayMonth = (this.today.getMonth() === this.currentDate.getMonth()) && isTodayYear;
   let isTodayDate = isTodayMonth && dayNum === this.today.getDate();
+  const isFutureMonth = this.currentDate.getMonth() > this.today.getMonth();
+  const isFutureDayInCurrentMonth = this.currentDate.getMonth() === this.today.getMonth() && dayNum > this.today.getDate();
+  const isFutureDate = isFutureDayInCurrentMonth || isFutureMonth;
+
   let div = document.createElement("div");
   div.className += `calendar__day calendar__day-active${
     isTodayDate ? " calendar__day-today" : ""
-  }${
+  }${isFutureDate ? ' calendar__day-future' : ''}${
     this.eventDayMap[dayNum]
       ? " calendar__day-event"
       : " calendar__day-no-event"
