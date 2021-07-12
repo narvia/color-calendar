@@ -312,7 +312,6 @@ export function rerenderSelectedDay(element: HTMLElement, dayNum: number, storeO
         div,
         previousElement.nextSibling
       );
-    }
   }
 
   // Store this element for later reference
