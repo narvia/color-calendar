@@ -307,14 +307,11 @@ export function rerenderSelectedDay(element: HTMLElement, dayNum: number, storeO
       div,
       element
     );
-  } else {
-    if (previousElement && previousElement.parentElement && previousElement.parentElement.contains(previousElement.nextSibling)) {
+  } else if (previousElement && previousElement.parentElement && previousElement.parentElement.contains(previousElement.nextSibling)) {
       previousElement.parentElement.insertBefore(
         div,
         previousElement.nextSibling
       );
-    } else {
-      console.log('Previous element does not have parent');
     }
   }
 
